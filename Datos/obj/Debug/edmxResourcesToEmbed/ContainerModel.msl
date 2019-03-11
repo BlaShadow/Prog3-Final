@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ChequeoVehiculosModelStoreContainer" CdmEntityContainer="Chequeo_de_VehiculosEntities1">
+    <EntitySetMapping Name="accesorios">
+      <EntityTypeMapping TypeName="ChequeoVehiculosModel.accesorio">
+        <MappingFragment StoreEntitySet="accesorio">
+          <ScalarProperty Name="detalles" ColumnName="detalles" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="tipo_accesorio" ColumnName="tipo_accesorio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chequeos">
+      <EntityTypeMapping TypeName="ChequeoVehiculosModel.chequeo">
+        <MappingFragment StoreEntitySet="chequeo">
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="id_vehiculo" ColumnName="id_vehiculo" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="kilometraje" ColumnName="kilometraje" />
+          <ScalarProperty Name="combustible" ColumnName="combustible" />
+          <ScalarProperty Name="detalles" ColumnName="detalles" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nivels">
+      <EntityTypeMapping TypeName="ChequeoVehiculosModel.nivel">
+        <MappingFragment StoreEntitySet="nivel">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permisoes">
+      <EntityTypeMapping TypeName="ChequeoVehiculosModel.permiso">
+        <MappingFragment StoreEntitySet="permiso">
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="periodos_renovacion" ColumnName="periodos_renovacion" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="detalles" ColumnName="detalles" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ChequeoVehiculosModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_accesorio">
+      <EntityTypeMapping TypeName="ChequeoVehiculosModel.tipo_accesorio">
+        <MappingFragment StoreEntitySet="tipo_accesorio">
+          <ScalarProperty Name="detalles" ColumnName="detalles" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="ChequeoVehiculosModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="usuario1" ColumnName="usuario" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="nivel" ColumnName="nivel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vehiculoes">
+      <EntityTypeMapping TypeName="ChequeoVehiculosModel.vehiculo">
+        <MappingFragment StoreEntitySet="vehiculo">
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="matricula" ColumnName="matricula" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="ano" ColumnName="ano" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="chasis" ColumnName="chasis" />
+          <ScalarProperty Name="puertas" ColumnName="puertas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chequeo_accesorio">
+      <EntityTypeMapping TypeName="ChequeoVehiculosModel.chequeo_accesorio">
+        <MappingFragment StoreEntitySet="chequeo_accesorio">
+          <ScalarProperty Name="chequeo_id" ColumnName="chequeo_id" />
+          <ScalarProperty Name="accesorio_id" ColumnName="accesorio_id" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="vehiculo_permiso" TypeName="ChequeoVehiculosModel.vehiculo_permiso" StoreEntitySet="vehiculo_permiso">
+      <EndProperty Name="permiso">
+        <ScalarProperty Name="id" ColumnName="permiso_id" />
+      </EndProperty>
+      <EndProperty Name="vehiculo">
+        <ScalarProperty Name="id" ColumnName="vehiculo_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

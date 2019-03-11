@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChequeoVehiculosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="accesorio">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipo_accesorio" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tipo_accesorio1" Relationship="Self.FK_accesorio_tipo_accesorio" FromRole="accesorio" ToRole="tipo_accesorio" />
+    <NavigationProperty Name="chequeo_accesorio" Relationship="Self.FK_chequeo_accesorio_accesorio" FromRole="accesorio" ToRole="chequeo_accesorio" />
+    <Property Name="detalles" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="chequeo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="id_vehiculo" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="tipo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="kilometraje" Type="Int32" Nullable="false" />
+    <Property Name="combustible" Type="Int32" Nullable="false" />
+    <Property Name="detalles" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="chequeo_accesorio" Relationship="Self.FK_chequeo_accesorio_chequeo" FromRole="chequeo" ToRole="chequeo_accesorio" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK_chequeo_Usuarios" FromRole="chequeo" ToRole="usuario" />
+    <NavigationProperty Name="vehiculo" Relationship="Self.FK_chequeo_Vehiculo" FromRole="chequeo" ToRole="vehiculo" />
+    <Property Name="activo" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="nivel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="usuarios" Relationship="Self.FK_usuario_nivel" FromRole="nivel" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="permiso">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="detalles" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="vehiculoes" Relationship="Self.vehiculo_permiso" FromRole="permiso" ToRole="vehiculo" />
+    <Property Name="periodos_renovacion" Type="Int32" Nullable="false" />
+    <Property Name="activo" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tipo_accesorio">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="accesorios" Relationship="Self.FK_accesorio_tipo_accesorio" FromRole="tipo_accesorio" ToRole="accesorio" />
+    <Property Name="detalles" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="clave" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nivel" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="chequeos" Relationship="Self.FK_chequeo_Usuarios" FromRole="usuario" ToRole="chequeo" />
+    <NavigationProperty Name="nivel1" Relationship="Self.FK_usuario_nivel" FromRole="usuario" ToRole="nivel" />
+    <Property Name="activo" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vehiculo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="matricula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ano" Type="Int32" Nullable="false" />
+    <Property Name="marca" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="modelo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="chasis" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="puertas" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="chequeos" Relationship="Self.FK_chequeo_Vehiculo" FromRole="vehiculo" ToRole="chequeo" />
+    <NavigationProperty Name="permisoes" Relationship="Self.vehiculo_permiso" FromRole="vehiculo" ToRole="permiso" />
+    <Property Name="activo" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="chequeo_accesorio">
+    <Key>
+      <PropertyRef Name="chequeo_id" />
+      <PropertyRef Name="accesorio_id" />
+      <PropertyRef Name="valor" />
+    </Key>
+    <Property Name="chequeo_id" Type="Int32" Nullable="false" />
+    <Property Name="accesorio_id" Type="Int32" Nullable="false" />
+    <Property Name="valor" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="accesorio" Relationship="Self.FK_chequeo_accesorio_accesorio" FromRole="chequeo_accesorio" ToRole="accesorio" />
+    <NavigationProperty Name="chequeo" Relationship="Self.FK_chequeo_accesorio_chequeo" FromRole="chequeo_accesorio" ToRole="chequeo" />
+  </EntityType>
+  <Association Name="FK_accesorio_tipo_accesorio">
+    <End Role="tipo_accesorio" Type="Self.tipo_accesorio" Multiplicity="1" />
+    <End Role="accesorio" Type="Self.accesorio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_accesorio">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="accesorio">
+        <PropertyRef Name="tipo_accesorio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_chequeo_accesorio_accesorio">
+    <End Role="accesorio" Type="Self.accesorio" Multiplicity="1" />
+    <End Role="chequeo_accesorio" Type="Self.chequeo_accesorio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="accesorio">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="chequeo_accesorio">
+        <PropertyRef Name="accesorio_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_chequeo_accesorio_chequeo">
+    <End Role="chequeo" Type="Self.chequeo" Multiplicity="1" />
+    <End Role="chequeo_accesorio" Type="Self.chequeo_accesorio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="chequeo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="chequeo_accesorio">
+        <PropertyRef Name="chequeo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_chequeo_Usuarios">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="chequeo" Type="Self.chequeo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="chequeo">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_chequeo_Vehiculo">
+    <End Role="vehiculo" Type="Self.vehiculo" Multiplicity="1" />
+    <End Role="chequeo" Type="Self.chequeo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vehiculo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="chequeo">
+        <PropertyRef Name="id_vehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usuario_nivel">
+    <End Role="nivel" Type="Self.nivel" Multiplicity="1" />
+    <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="nivel">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="usuario">
+        <PropertyRef Name="nivel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="vehiculo_permiso">
+    <End Role="permiso" Type="Self.permiso" Multiplicity="*" />
+    <End Role="vehiculo" Type="Self.vehiculo" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Chequeo_de_VehiculosEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="accesorios" EntityType="Self.accesorio" />
+    <EntitySet Name="chequeos" EntityType="Self.chequeo" />
+    <EntitySet Name="nivels" EntityType="Self.nivel" />
+    <EntitySet Name="permisoes" EntityType="Self.permiso" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="tipo_accesorio" EntityType="Self.tipo_accesorio" />
+    <EntitySet Name="usuarios" EntityType="Self.usuario" />
+    <EntitySet Name="vehiculoes" EntityType="Self.vehiculo" />
+    <EntitySet Name="chequeo_accesorio" EntityType="Self.chequeo_accesorio" />
+    <AssociationSet Name="FK_accesorio_tipo_accesorio" Association="Self.FK_accesorio_tipo_accesorio">
+      <End Role="tipo_accesorio" EntitySet="tipo_accesorio" />
+      <End Role="accesorio" EntitySet="accesorios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_chequeo_accesorio_accesorio" Association="Self.FK_chequeo_accesorio_accesorio">
+      <End Role="accesorio" EntitySet="accesorios" />
+      <End Role="chequeo_accesorio" EntitySet="chequeo_accesorio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_chequeo_accesorio_chequeo" Association="Self.FK_chequeo_accesorio_chequeo">
+      <End Role="chequeo" EntitySet="chequeos" />
+      <End Role="chequeo_accesorio" EntitySet="chequeo_accesorio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_chequeo_Usuarios" Association="Self.FK_chequeo_Usuarios">
+      <End Role="usuario" EntitySet="usuarios" />
+      <End Role="chequeo" EntitySet="chequeos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_chequeo_Vehiculo" Association="Self.FK_chequeo_Vehiculo">
+      <End Role="vehiculo" EntitySet="vehiculoes" />
+      <End Role="chequeo" EntitySet="chequeos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usuario_nivel" Association="Self.FK_usuario_nivel">
+      <End Role="nivel" EntitySet="nivels" />
+      <End Role="usuario" EntitySet="usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="vehiculo_permiso" Association="Self.vehiculo_permiso">
+      <End Role="permiso" EntitySet="permisoes" />
+      <End Role="vehiculo" EntitySet="vehiculoes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

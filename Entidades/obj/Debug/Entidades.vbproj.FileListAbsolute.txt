@@ -1,0 +1,10 @@
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Entidades\bin\Debug\Entidades.dll
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Entidades\bin\Debug\Entidades.xml
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Entidades\obj\Debug\Entidades.vbprojAssemblyReference.cache
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Entidades\obj\Debug\Entidades.Resources.resources
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Entidades\obj\Debug\Entidades.vbproj.GenerateResource.cache
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Entidades\obj\Debug\Entidades.vbproj.CoreCompileInputs.cache
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Entidades\obj\Debug\Entidades.dll
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Entidades\obj\Debug\Entidades.xml
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Entidades\obj\Debug\Entidades.pdb

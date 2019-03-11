@@ -1,0 +1,333 @@
+﻿USE [master]
+GO
+/****** Object:  Database [Chequeo_de_Vehiculos]    Script Date: 03/11/2019 01:24:18 ******/
+CREATE DATABASE [Chequeo_de_Vehiculos] ON  PRIMARY 
+( NAME = N'Chequeo_de_Vehiculos', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL10_50.HYSQL\MSSQL\DATA\Chequeo_de_Vehiculos.mdf' , SIZE = 2304KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'Chequeo_de_Vehiculos_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL10_50.HYSQL\MSSQL\DATA\Chequeo_de_Vehiculos_log.LDF' , SIZE = 576KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET COMPATIBILITY_LEVEL = 100
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [Chequeo_de_Vehiculos].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET ANSI_NULL_DEFAULT OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET ANSI_NULLS OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET ANSI_PADDING OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET ANSI_WARNINGS OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET ARITHABORT OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET AUTO_CLOSE OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET AUTO_CREATE_STATISTICS ON
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET AUTO_SHRINK OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET AUTO_UPDATE_STATISTICS ON
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET CURSOR_CLOSE_ON_COMMIT OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET CURSOR_DEFAULT  GLOBAL
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET CONCAT_NULL_YIELDS_NULL OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET NUMERIC_ROUNDABORT OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET QUOTED_IDENTIFIER OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET RECURSIVE_TRIGGERS OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET  DISABLE_BROKER
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET AUTO_UPDATE_STATISTICS_ASYNC OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET DATE_CORRELATION_OPTIMIZATION OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET TRUSTWORTHY OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET ALLOW_SNAPSHOT_ISOLATION OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET PARAMETERIZATION SIMPLE
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET READ_COMMITTED_SNAPSHOT OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET HONOR_BROKER_PRIORITY OFF
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET  READ_WRITE
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET RECOVERY FULL
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET  MULTI_USER
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET PAGE_VERIFY CHECKSUM
+GO
+ALTER DATABASE [Chequeo_de_Vehiculos] SET DB_CHAINING OFF
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'Chequeo_de_Vehiculos', N'ON'
+GO
+USE [Chequeo_de_Vehiculos]
+GO
+/****** Object:  Table [dbo].[tipo_accesorio]    Script Date: 03/11/2019 01:24:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[tipo_accesorio](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[nombre] [varchar](250) NOT NULL,
+	[detalles] [varchar](250) NOT NULL,
+ CONSTRAINT [PK_tipo_accesorio] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[permiso]    Script Date: 03/11/2019 01:24:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[permiso](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[nombre] [varchar](250) NOT NULL,
+	[detalles] [varchar](250) NOT NULL,
+	[periodos_renovacion] [int] NOT NULL,
+	[activo] [bit] NOT NULL,
+ CONSTRAINT [PK_Table_1] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[nivel]    Script Date: 03/11/2019 01:24:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[nivel](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[nombre] [varchar](250) NOT NULL,
+ CONSTRAINT [PK_NivelUsuario] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[vehiculo]    Script Date: 03/11/2019 01:24:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[vehiculo](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[matricula] [varchar](20) NOT NULL,
+	[color] [varchar](20) NOT NULL,
+	[ano] [int] NOT NULL,
+	[marca] [varchar](30) NOT NULL,
+	[modelo] [varchar](20) NOT NULL,
+	[chasis] [varchar](30) NOT NULL,
+	[puertas] [int] NOT NULL,
+	[activo] [bit] NOT NULL,
+ CONSTRAINT [PK_Vehiculo] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  StoredProcedure [dbo].[iniciasesion]    Script Date: 03/11/2019 01:24:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create proc [dbo].[iniciasesion]
+@Usuario varchar (25),
+@Contraseña varchar (25)
+as 
+select * from Usuarios where 
+Usuario=@Usuario and Contraseña=@Contraseña
+GO
+/****** Object:  Table [dbo].[vehiculo_permiso]    Script Date: 03/11/2019 01:24:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[vehiculo_permiso](
+	[vehiculo_id] [int] NOT NULL,
+	[permiso_id] [int] NOT NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[usuario]    Script Date: 03/11/2019 01:24:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[usuario](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[usuario] [varchar](255) NOT NULL,
+	[clave] [varchar](255) NOT NULL,
+	[nivel] [int] NOT NULL,
+	[activo] [bit] NOT NULL,
+ CONSTRAINT [PK_Usuarios] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IX_usuario] ON [dbo].[usuario] 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[accesorio]    Script Date: 03/11/2019 01:24:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[accesorio](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[nombre] [varchar](50) NOT NULL,
+	[tipo_accesorio] [int] NOT NULL,
+	[detalles] [varchar](250) NOT NULL,
+ CONSTRAINT [PK_accesorio] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[chequeo]    Script Date: 03/11/2019 01:24:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[chequeo](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[id_usuario] [int] NOT NULL,
+	[id_vehiculo] [int] NOT NULL,
+	[fecha] [datetime2](7) NOT NULL,
+	[tipo] [nchar](10) NOT NULL,
+	[kilometraje] [int] NOT NULL,
+	[combustible] [int] NOT NULL,
+	[detalles] [varchar](250) NULL,
+	[activo] [bit] NOT NULL,
+ CONSTRAINT [PK_chequeo] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[chequeo_accesorio]    Script Date: 03/11/2019 01:24:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[chequeo_accesorio](
+	[chequeo_id] [int] NOT NULL,
+	[accesorio_id] [int] NOT NULL,
+	[valor] [bit] NOT NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Default [DF_permiso_activo]    Script Date: 03/11/2019 01:24:21 ******/
+ALTER TABLE [dbo].[permiso] ADD  CONSTRAINT [DF_permiso_activo]  DEFAULT ((1)) FOR [activo]
+GO
+/****** Object:  Default [DF_vehiculo_activo]    Script Date: 03/11/2019 01:24:21 ******/
+ALTER TABLE [dbo].[vehiculo] ADD  CONSTRAINT [DF_vehiculo_activo]  DEFAULT ((1)) FOR [activo]
+GO
+/****** Object:  Default [DF_usuario_activo]    Script Date: 03/11/2019 01:24:23 ******/
+ALTER TABLE [dbo].[usuario] ADD  CONSTRAINT [DF_usuario_activo]  DEFAULT ((1)) FOR [activo]
+GO
+/****** Object:  Default [DF_chequeo_fecha]    Script Date: 03/11/2019 01:24:23 ******/
+ALTER TABLE [dbo].[chequeo] ADD  CONSTRAINT [DF_chequeo_fecha]  DEFAULT (getdate()) FOR [fecha]
+GO
+/****** Object:  Default [DF_chequeo_activo]    Script Date: 03/11/2019 01:24:23 ******/
+ALTER TABLE [dbo].[chequeo] ADD  CONSTRAINT [DF_chequeo_activo]  DEFAULT ((1)) FOR [activo]
+GO
+/****** Object:  Default [DF_chequeo_accesorio_valor]    Script Date: 03/11/2019 01:24:23 ******/
+ALTER TABLE [dbo].[chequeo_accesorio] ADD  CONSTRAINT [DF_chequeo_accesorio_valor]  DEFAULT ((0)) FOR [valor]
+GO
+/****** Object:  Check [CK_chequeo]    Script Date: 03/11/2019 01:24:23 ******/
+ALTER TABLE [dbo].[chequeo]  WITH CHECK ADD  CONSTRAINT [CK_chequeo] CHECK  (([tipo]='OTRO' OR [tipo]='SALIDA' OR [tipo]='ENTRADA'))
+GO
+ALTER TABLE [dbo].[chequeo] CHECK CONSTRAINT [CK_chequeo]
+GO
+/****** Object:  ForeignKey [FK_vehiculo_permiso_permiso]    Script Date: 03/11/2019 01:24:23 ******/
+ALTER TABLE [dbo].[vehiculo_permiso]  WITH CHECK ADD  CONSTRAINT [FK_vehiculo_permiso_permiso] FOREIGN KEY([permiso_id])
+REFERENCES [dbo].[permiso] ([id])
+GO
+ALTER TABLE [dbo].[vehiculo_permiso] CHECK CONSTRAINT [FK_vehiculo_permiso_permiso]
+GO
+/****** Object:  ForeignKey [FK_vehiculo_permiso_vehiculo]    Script Date: 03/11/2019 01:24:23 ******/
+ALTER TABLE [dbo].[vehiculo_permiso]  WITH CHECK ADD  CONSTRAINT [FK_vehiculo_permiso_vehiculo] FOREIGN KEY([vehiculo_id])
+REFERENCES [dbo].[vehiculo] ([id])
+GO
+ALTER TABLE [dbo].[vehiculo_permiso] CHECK CONSTRAINT [FK_vehiculo_permiso_vehiculo]
+GO
+/****** Object:  ForeignKey [FK_usuario_nivel]    Script Date: 03/11/2019 01:24:23 ******/
+ALTER TABLE [dbo].[usuario]  WITH CHECK ADD  CONSTRAINT [FK_usuario_nivel] FOREIGN KEY([nivel])
+REFERENCES [dbo].[nivel] ([id])
+GO
+ALTER TABLE [dbo].[usuario] CHECK CONSTRAINT [FK_usuario_nivel]
+GO
+/****** Object:  ForeignKey [FK_accesorio_tipo_accesorio]    Script Date: 03/11/2019 01:24:23 ******/
+ALTER TABLE [dbo].[accesorio]  WITH CHECK ADD  CONSTRAINT [FK_accesorio_tipo_accesorio] FOREIGN KEY([tipo_accesorio])
+REFERENCES [dbo].[tipo_accesorio] ([id])
+GO
+ALTER TABLE [dbo].[accesorio] CHECK CONSTRAINT [FK_accesorio_tipo_accesorio]
+GO
+/****** Object:  ForeignKey [FK_chequeo_Usuarios]    Script Date: 03/11/2019 01:24:23 ******/
+ALTER TABLE [dbo].[chequeo]  WITH CHECK ADD  CONSTRAINT [FK_chequeo_Usuarios] FOREIGN KEY([id_usuario])
+REFERENCES [dbo].[usuario] ([id])
+GO
+ALTER TABLE [dbo].[chequeo] CHECK CONSTRAINT [FK_chequeo_Usuarios]
+GO
+/****** Object:  ForeignKey [FK_chequeo_Vehiculo]    Script Date: 03/11/2019 01:24:23 ******/
+ALTER TABLE [dbo].[chequeo]  WITH CHECK ADD  CONSTRAINT [FK_chequeo_Vehiculo] FOREIGN KEY([id_vehiculo])
+REFERENCES [dbo].[vehiculo] ([id])
+GO
+ALTER TABLE [dbo].[chequeo] CHECK CONSTRAINT [FK_chequeo_Vehiculo]
+GO
+/****** Object:  ForeignKey [FK_chequeo_accesorio_accesorio]    Script Date: 03/11/2019 01:24:23 ******/
+ALTER TABLE [dbo].[chequeo_accesorio]  WITH CHECK ADD  CONSTRAINT [FK_chequeo_accesorio_accesorio] FOREIGN KEY([accesorio_id])
+REFERENCES [dbo].[accesorio] ([id])
+GO
+ALTER TABLE [dbo].[chequeo_accesorio] CHECK CONSTRAINT [FK_chequeo_accesorio_accesorio]
+GO
+/****** Object:  ForeignKey [FK_chequeo_accesorio_chequeo]    Script Date: 03/11/2019 01:24:23 ******/
+ALTER TABLE [dbo].[chequeo_accesorio]  WITH CHECK ADD  CONSTRAINT [FK_chequeo_accesorio_chequeo] FOREIGN KEY([chequeo_id])
+REFERENCES [dbo].[chequeo] ([id])
+GO
+ALTER TABLE [dbo].[chequeo_accesorio] CHECK CONSTRAINT [FK_chequeo_accesorio_chequeo]
+GO

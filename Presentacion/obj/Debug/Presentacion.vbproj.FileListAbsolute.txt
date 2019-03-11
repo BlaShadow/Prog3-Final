@@ -1,0 +1,61 @@
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\bin\Debug\Presentacion.xml
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\bin\Debug\Datos.dll
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\bin\Debug\Entidades.dll
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\bin\Debug\Datos.pdb
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\bin\Debug\Datos.xml
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\bin\Debug\Datos.dll.config
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\bin\Debug\Entidades.pdb
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\bin\Debug\Entidades.xml
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\obj\Debug\Presentacion.vbprojAssemblyReference.cache
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\obj\Debug\Presentacion.Login.resources
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\obj\Debug\Presentacion.Resources.resources
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\obj\Debug\Presentacion.vbproj.GenerateResource.cache
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\obj\Debug\Presentacion.vbproj.CoreCompileInputs.cache
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\obj\Debug\Presentacion.vbproj.CopyComplete
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\obj\Debug\Presentacion.xml
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\obj\Debug\Presentacion.MenuPrincipal.resources
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\obj\Debug\Presentacion.MantenimientoUsuario.resources
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Presentacion\obj\Debug\Presentacion.mantenimentosVehiculos.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\bin\Debug\Presentacion.xml
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\bin\Debug\Datos.dll
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\bin\Debug\Entidades.dll
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\bin\Debug\Datos.pdb
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\bin\Debug\Datos.xml
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\bin\Debug\Datos.dll.config
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\bin\Debug\Entidades.pdb
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\bin\Debug\Entidades.xml
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\bin\Debug\EntityFramework.xml
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.vbprojAssemblyReference.cache
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.Login.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.mantenimentosVehiculos.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.MantenimientoUsuario.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.MenuPrincipal.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.Resources.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.vbproj.GenerateResource.cache
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.vbproj.CoreCompileInputs.cache
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.vbproj.CopyComplete
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.xml
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.Usuarios.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.Accesorio.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.AgregarAccesorio.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.TipoAccesorio.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.AgregarPermiso.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.AgregarUsuario.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.AgregarVehiculo.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.Chequeo.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\bin\Debug\EntityFramework.dll
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.Vehiculos.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.Permisos.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.Chequeos.resources

@@ -1,0 +1,34 @@
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Datos\bin\Debug\Datos.dll.config
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Datos\bin\Debug\Datos.dll
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Datos\bin\Debug\Datos.pdb
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Datos\bin\Debug\Datos.xml
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Datos\bin\Debug\Entidades.dll
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Datos\bin\Debug\Entidades.pdb
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Datos\bin\Debug\Entidades.xml
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Datos\obj\Debug\Datos.vbprojAssemblyReference.cache
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Datos\obj\Debug\Datos.Resources.resources
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Datos\obj\Debug\Datos.vbproj.GenerateResource.cache
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Datos\obj\Debug\Datos.vbproj.CoreCompileInputs.cache
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Datos\obj\Debug\Datos.vbproj.CopyComplete
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Datos\obj\Debug\Datos.dll
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Datos\obj\Debug\Datos.xml
+C:\Users\Edwin Almanzar\source\repos\App de Chequeo de Vehiculos\Datos\obj\Debug\Datos.pdb
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\bin\Debug\Datos.dll.config
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\bin\Debug\Datos.dll
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\bin\Debug\Datos.pdb
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\bin\Debug\Datos.xml
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\bin\Debug\Entidades.dll
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\bin\Debug\EntityFramework.dll
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\bin\Debug\Entidades.pdb
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\bin\Debug\Entidades.xml
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\bin\Debug\EntityFramework.xml
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\obj\Debug\Datos.vbprojAssemblyReference.cache
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\obj\Debug\Datos.Resources.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\obj\Debug\Datos.vbproj.GenerateResource.cache
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\obj\Debug\Datos.vbproj.CoreCompileInputs.cache
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\obj\Debug\Datos.vbproj.CopyComplete
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\obj\Debug\Datos.dll
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\obj\Debug\Datos.xml
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Datos\obj\Debug\Datos.pdb
