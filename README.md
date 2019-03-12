@@ -4,8 +4,8 @@ El sistema consistirá en una aplicación de escritorio que permitirá llevar un
 
 
 *Instalacion*
-../blob/master/
-Script de base de datos ![Script Base de datos](../blob/master/Datos/DataBaseScript.txt)
+Script de base de datos \
+![Script Base de datos](../blob/master/Datos/DataBaseScript.txt)
 
 
 *Caracteristicas principales*
