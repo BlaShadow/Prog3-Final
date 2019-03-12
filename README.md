@@ -11,4 +11,9 @@ El sistema consistirá en una aplicación de escritorio que permitirá llevar un
 
 *Capturas de pantalla*
 
+First Header | Second Header
+------------ | -------------
+![Login ](https://raw.githubusercontent.com/BlaShadow/Prog3-Final/master/Presentacion/Capturas/Login.JPG)|![Dashboard ](https://raw.githubusercontent.com/BlaShadow/Prog3-Final/master/Presentacion/Capturas/Dashboard.JPG)
+![Accesorios ](https://raw.githubusercontent.com/BlaShadow/Prog3-Final/master/Presentacion/Capturas/Accesorios.JPG)|![AgregarVehiculo ](https://raw.githubusercontent.com/BlaShadow/Prog3-Final/master/Presentacion/Capturas/AgregarVehiculo.JPG)
+![DetallesChequeo ](https://raw.githubusercontent.com/BlaShadow/Prog3-Final/master/Presentacion/Capturas/DetalleChequeo.JPG)|
 
