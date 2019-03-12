@@ -5,15 +5,16 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="97a1a7fde001401cb46f959973211529" Name="Diagram1" ZoomLevel="124">
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.accesorio" Width="1.5" PointX="5.25" PointY="11.75" />
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.chequeo" Width="1.5" PointX="5.25" PointY="1" />
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.chequeo_accesorio" Width="1.5" PointX="7.5" PointY="1.875" />
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.nivel" Width="1.5" PointX="0.75" PointY="8.375" />
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.permiso" Width="1.5" PointX="0.75" PointY="1.75" />
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.tipo_accesorio" Width="1.5" PointX="3" PointY="12" />
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.usuario" Width="1.5" PointX="3" PointY="8" />
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.vehiculo" Width="1.5" PointX="3" PointY="1.25" />
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.vehiculo_estado" Width="1.5" PointX="3" PointY="5.375" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.accesorio" Width="1.5" PointX="6" PointY="12.125" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.chequeo" Width="1.5" PointX="6" PointY="4.375" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.chequeo_accesorio" Width="1.5" PointX="8.25" PointY="5.25" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.nivel" Width="1.5" PointX="1.5" PointY="2.25" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.permiso" Width="1.5" PointX="0.75" PointY="9.125" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.tipo_accesorio" Width="1.5" PointX="3.75" PointY="12.25" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.usuario" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.vehiculo" Width="1.5" PointX="0.75" PointY="4.625" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.vehiculo_estado" Width="1.5" PointX="3.75" PointY="8.875" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.vehiculo_permiso" Width="1.5" PointX="3" PointY="5" />
         <AssociationConnector Association="ChequeoVehiculosModel.FK_accesorio_tipo_accesorio" />
         <AssociationConnector Association="ChequeoVehiculosModel.FK_chequeo_accesorio_accesorio" />
         <AssociationConnector Association="ChequeoVehiculosModel.FK_chequeo_accesorio_chequeo" />
@@ -21,7 +22,8 @@
         <AssociationConnector Association="ChequeoVehiculosModel.FK_chequeo_Vehiculo" />
         <AssociationConnector Association="ChequeoVehiculosModel.FK_chequeo_vehiculo_estado" />
         <AssociationConnector Association="ChequeoVehiculosModel.FK_usuario_nivel" />
-        <AssociationConnector Association="ChequeoVehiculosModel.vehiculo_permiso" />
+        <AssociationConnector Association="ChequeoVehiculosModel.FK_vehiculo_permiso_permiso" />
+        <AssociationConnector Association="ChequeoVehiculosModel.FK_vehiculo_permiso_vehiculo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

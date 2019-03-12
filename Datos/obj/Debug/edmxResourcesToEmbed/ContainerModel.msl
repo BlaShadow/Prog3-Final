@@ -110,13 +110,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="vehiculo_permiso" TypeName="ChequeoVehiculosModel.vehiculo_permiso" StoreEntitySet="vehiculo_permiso">
-      <EndProperty Name="vehiculo">
-        <ScalarProperty Name="id" ColumnName="vehiculo_id" />
-      </EndProperty>
-      <EndProperty Name="permiso">
-        <ScalarProperty Name="id" ColumnName="permiso_id" />
-      </EndProperty>
-    </AssociationSetMapping>
+    <EntitySetMapping Name="vehiculo_permiso">
+      <EntityTypeMapping TypeName="ChequeoVehiculosModel.vehiculo_permiso">
+        <MappingFragment StoreEntitySet="vehiculo_permiso">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="vencimiento" ColumnName="vencimiento" />
+          <ScalarProperty Name="creacion" ColumnName="creacion" />
+          <ScalarProperty Name="permiso_id" ColumnName="permiso_id" />
+          <ScalarProperty Name="vehiculo_id" ColumnName="vehiculo_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

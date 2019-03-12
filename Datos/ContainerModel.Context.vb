@@ -32,5 +32,6 @@ Partial Public Class Chequeo_de_VehiculosEntities1
     Public Overridable Property usuarios() As DbSet(Of usuario)
     Public Overridable Property vehiculoes() As DbSet(Of vehiculo)
     Public Overridable Property vehiculo_estado() As DbSet(Of vehiculo_estado)
+    Public Overridable Property vehiculo_permiso() As DbSet(Of vehiculo_permiso)
 
 End Class

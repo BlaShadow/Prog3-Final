@@ -22,6 +22,6 @@ Partial Public Class vehiculo
     Public Property activo As Boolean
 
     Public Overridable Property chequeos As ICollection(Of chequeo) = New HashSet(Of chequeo)
-    Public Overridable Property permisoes As ICollection(Of permiso) = New HashSet(Of permiso)
+    Public Overridable Property vehiculo_permiso As ICollection(Of vehiculo_permiso) = New HashSet(Of vehiculo_permiso)
 
 End Class

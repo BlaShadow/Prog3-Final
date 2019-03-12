@@ -63,4 +63,18 @@
 
         Me.setFormIntoPanel(form)
     End Sub
+
+    Private Sub Dashboard_Click(sender As Object, e As EventArgs) Handles Dashboard.Click
+        Dim form = New Dashboard()
+
+        Me.setFormIntoPanel(form)
+    End Sub
+
+    Private Sub PanelContenedor_Paint(sender As Object, e As PaintEventArgs) Handles PanelContenedor.Paint
+
+    End Sub
+
+    Private Sub MenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Dashboard_Click(sender, e)
+    End Sub
 End Class

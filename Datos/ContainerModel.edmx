@@ -105,15 +105,15 @@
           <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="detalles" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Chequeo_de_Vehiculos.dbo.vehiculo_permiso' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vehiculo_permiso">
           <Key>
-            <PropertyRef Name="vehiculo_id" />
-            <PropertyRef Name="permiso_id" />
+            <PropertyRef Name="id" />
           </Key>
           <Property Name="vehiculo_id" Type="int" Nullable="false" />
           <Property Name="permiso_id" Type="int" Nullable="false" />
+          <Property Name="creacion" Type="datetime" Nullable="false" />
+          <Property Name="vencimiento" Type="datetime" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <Association Name="FK_accesorio_tipo_accesorio">
           <End Role="tipo_accesorio" Type="Self.tipo_accesorio" Multiplicity="1" />
@@ -234,12 +234,7 @@ warning 6002: The table/view 'Chequeo_de_Vehiculos.dbo.vehiculo_permiso' does no
           <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vehiculo" EntityType="Self.vehiculo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vehiculo_estado" EntityType="Self.vehiculo_estado" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="vehiculo_permiso" EntityType="Self.vehiculo_permiso" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vehiculo_permiso].[vehiculo_id] AS [vehiculo_id], 
-    [vehiculo_permiso].[permiso_id] AS [permiso_id]
-    FROM [dbo].[vehiculo_permiso] AS [vehiculo_permiso]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="vehiculo_permiso" EntityType="Self.vehiculo_permiso" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_accesorio_tipo_accesorio" Association="Self.FK_accesorio_tipo_accesorio">
             <End Role="tipo_accesorio" EntitySet="tipo_accesorio" />
             <End Role="accesorio" EntitySet="accesorio" />
@@ -302,6 +297,7 @@ warning 6002: The table/view 'Chequeo_de_Vehiculos.dbo.vehiculo_permiso' does no
           <EntitySet Name="usuarios" EntityType="ChequeoVehiculosModel.usuario" />
           <EntitySet Name="vehiculoes" EntityType="ChequeoVehiculosModel.vehiculo" />
           <EntitySet Name="vehiculo_estado" EntityType="ChequeoVehiculosModel.vehiculo_estado" />
+          <EntitySet Name="vehiculo_permiso" EntityType="ChequeoVehiculosModel.vehiculo_permiso" />
           <AssociationSet Name="FK_accesorio_tipo_accesorio" Association="ChequeoVehiculosModel.FK_accesorio_tipo_accesorio">
             <End Role="tipo_accesorio" EntitySet="tipo_accesorio" />
             <End Role="accesorio" EntitySet="accesorios" />
@@ -330,9 +326,13 @@ warning 6002: The table/view 'Chequeo_de_Vehiculos.dbo.vehiculo_permiso' does no
             <End Role="nivel" EntitySet="nivels" />
             <End Role="usuario" EntitySet="usuarios" />
           </AssociationSet>
-          <AssociationSet Name="vehiculo_permiso" Association="ChequeoVehiculosModel.vehiculo_permiso">
+          <AssociationSet Name="FK_vehiculo_permiso_permiso" Association="ChequeoVehiculosModel.FK_vehiculo_permiso_permiso">
             <End Role="permiso" EntitySet="permisoes" />
+            <End Role="vehiculo_permiso" EntitySet="vehiculo_permiso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vehiculo_permiso_vehiculo" Association="ChequeoVehiculosModel.FK_vehiculo_permiso_vehiculo">
             <End Role="vehiculo" EntitySet="vehiculoes" />
+            <End Role="vehiculo_permiso" EntitySet="vehiculo_permiso" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="accesorio">
@@ -393,7 +393,7 @@ warning 6002: The table/view 'Chequeo_de_Vehiculos.dbo.vehiculo_permiso' does no
           <Property Name="detalles" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="periodos_renovacion" Type="Int32" Nullable="false" />
           <Property Name="activo" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="vehiculoes" Relationship="ChequeoVehiculosModel.vehiculo_permiso" FromRole="permiso" ToRole="vehiculo" />
+          <NavigationProperty Name="vehiculo_permiso" Relationship="ChequeoVehiculosModel.FK_vehiculo_permiso_permiso" FromRole="permiso" ToRole="vehiculo_permiso" />
         </EntityType>
         <EntityType Name="tipo_accesorio">
           <Key>
@@ -430,7 +430,7 @@ warning 6002: The table/view 'Chequeo_de_Vehiculos.dbo.vehiculo_permiso' does no
           <Property Name="puertas" Type="Int32" Nullable="false" />
           <Property Name="activo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="chequeos" Relationship="ChequeoVehiculosModel.FK_chequeo_Vehiculo" FromRole="vehiculo" ToRole="chequeo" />
-          <NavigationProperty Name="permisoes" Relationship="ChequeoVehiculosModel.vehiculo_permiso" FromRole="vehiculo" ToRole="permiso" />
+          <NavigationProperty Name="vehiculo_permiso" Relationship="ChequeoVehiculosModel.FK_vehiculo_permiso_vehiculo" FromRole="vehiculo" ToRole="vehiculo_permiso" />
         </EntityType>
         <EntityType Name="vehiculo_estado">
           <Key>
@@ -440,6 +440,18 @@ warning 6002: The table/view 'Chequeo_de_Vehiculos.dbo.vehiculo_permiso' does no
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="detalles" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="chequeos" Relationship="ChequeoVehiculosModel.FK_chequeo_vehiculo_estado" FromRole="vehiculo_estado" ToRole="chequeo" />
+        </EntityType>
+        <EntityType Name="vehiculo_permiso">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="vehiculo_id" Type="Int32" Nullable="false" />
+          <Property Name="permiso_id" Type="Int32" Nullable="false" />
+          <Property Name="creacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="vencimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="permiso" Relationship="ChequeoVehiculosModel.FK_vehiculo_permiso_permiso" FromRole="vehiculo_permiso" ToRole="permiso" />
+          <NavigationProperty Name="vehiculo" Relationship="ChequeoVehiculosModel.FK_vehiculo_permiso_vehiculo" FromRole="vehiculo_permiso" ToRole="vehiculo" />
         </EntityType>
         <Association Name="FK_accesorio_tipo_accesorio">
           <End Type="ChequeoVehiculosModel.tipo_accesorio" Role="tipo_accesorio" Multiplicity="1" />
@@ -525,11 +537,31 @@ warning 6002: The table/view 'Chequeo_de_Vehiculos.dbo.vehiculo_permiso' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="vehiculo_permiso">
-          <End Type="ChequeoVehiculosModel.permiso" Role="permiso" Multiplicity="*" />
-          <End Type="ChequeoVehiculosModel.vehiculo" Role="vehiculo" Multiplicity="*" />
+        <Association Name="FK_vehiculo_permiso_permiso">
+          <End Type="ChequeoVehiculosModel.permiso" Role="permiso" Multiplicity="1" />
+          <End Type="ChequeoVehiculosModel.vehiculo_permiso" Role="vehiculo_permiso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="permiso">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="vehiculo_permiso">
+              <PropertyRef Name="permiso_id" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-      </Schema>
+        <Association Name="FK_vehiculo_permiso_vehiculo">
+          <End Type="ChequeoVehiculosModel.vehiculo" Role="vehiculo" Multiplicity="1" />
+          <End Type="ChequeoVehiculosModel.vehiculo_permiso" Role="vehiculo_permiso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehiculo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="vehiculo_permiso">
+              <PropertyRef Name="vehiculo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -644,14 +676,17 @@ warning 6002: The table/view 'Chequeo_de_Vehiculos.dbo.vehiculo_permiso' does no
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="vehiculo_permiso" TypeName="ChequeoVehiculosModel.vehiculo_permiso" StoreEntitySet="vehiculo_permiso">
-            <EndProperty Name="vehiculo">
-              <ScalarProperty Name="id" ColumnName="vehiculo_id" />
-            </EndProperty>
-            <EndProperty Name="permiso">
-              <ScalarProperty Name="id" ColumnName="permiso_id" />
-            </EndProperty>
-          </AssociationSetMapping>
+          <EntitySetMapping Name="vehiculo_permiso">
+            <EntityTypeMapping TypeName="ChequeoVehiculosModel.vehiculo_permiso">
+              <MappingFragment StoreEntitySet="vehiculo_permiso">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="vencimiento" ColumnName="vencimiento" />
+                <ScalarProperty Name="creacion" ColumnName="creacion" />
+                <ScalarProperty Name="permiso_id" ColumnName="permiso_id" />
+                <ScalarProperty Name="vehiculo_id" ColumnName="vehiculo_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

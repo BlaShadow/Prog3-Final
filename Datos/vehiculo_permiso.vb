@@ -10,13 +10,14 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class permiso
+Partial Public Class vehiculo_permiso
+    Public Property vehiculo_id As Integer
+    Public Property permiso_id As Integer
+    Public Property creacion As Date
+    Public Property vencimiento As Date
     Public Property id As Integer
-    Public Property nombre As String
-    Public Property detalles As String
-    Public Property periodos_renovacion As Integer
-    Public Property activo As Boolean
 
-    Public Overridable Property vehiculo_permiso As ICollection(Of vehiculo_permiso) = New HashSet(Of vehiculo_permiso)
+    Public Overridable Property permiso As permiso
+    Public Overridable Property vehiculo As vehiculo
 
 End Class
