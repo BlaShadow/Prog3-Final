@@ -20,9 +20,11 @@ Partial Public Class chequeo
     Public Property combustible As Integer
     Public Property detalles As String
     Public Property activo As Boolean
+    Public Property id_estado As Integer
 
     Public Overridable Property chequeo_accesorio As ICollection(Of chequeo_accesorio) = New HashSet(Of chequeo_accesorio)
     Public Overridable Property usuario As usuario
     Public Overridable Property vehiculo As vehiculo
+    Public Overridable Property vehiculo_estado As vehiculo_estado
 
 End Class

@@ -152,6 +152,12 @@
     <Compile Include="Paneles\Chequeo\Chequeos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Paneles\Chequeo\DetallesChequeo.Designer.vb">
+      <DependentUpon>DetallesChequeo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Paneles\Chequeo\DetallesChequeo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Paneles\Permiso\AgregarPermiso.Designer.vb">
       <DependentUpon>AgregarPermiso.vb</DependentUpon>
     </Compile>
@@ -225,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Paneles\Chequeo\Chequeos.resx">
       <DependentUpon>Chequeos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paneles\Chequeo\DetallesChequeo.resx">
+      <DependentUpon>DetallesChequeo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Paneles\Permiso\AgregarPermiso.resx">
       <DependentUpon>AgregarPermiso.vb</DependentUpon>

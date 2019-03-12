@@ -30,7 +30,7 @@ Partial Class MenuPrincipal
         Me.btnUsuarios = New System.Windows.Forms.Button()
         Me.PanelMenu = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnAccesorios = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.btnVehiculos = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -81,7 +81,7 @@ Partial Class MenuPrincipal
         '
         Me.PanelMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
         Me.PanelMenu.Controls.Add(Me.Panel6)
-        Me.PanelMenu.Controls.Add(Me.Button1)
+        Me.PanelMenu.Controls.Add(Me.btnAccesorios)
         Me.PanelMenu.Controls.Add(Me.Panel5)
         Me.PanelMenu.Controls.Add(Me.btnUsuarios)
         Me.PanelMenu.Controls.Add(Me.Panel4)
@@ -108,22 +108,22 @@ Partial Class MenuPrincipal
         Me.Panel6.Size = New System.Drawing.Size(4, 41)
         Me.Panel6.TabIndex = 11
         '
-        'Button1
+        'btnAccesorios
         '
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(7, 285)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(141, 41)
-        Me.Button1.TabIndex = 10
-        Me.Button1.Text = "ACCESORIOS"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnAccesorios.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAccesorios.FlatAppearance.BorderSize = 0
+        Me.btnAccesorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAccesorios.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAccesorios.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnAccesorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAccesorios.Location = New System.Drawing.Point(7, 285)
+        Me.btnAccesorios.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnAccesorios.Name = "btnAccesorios"
+        Me.btnAccesorios.Size = New System.Drawing.Size(141, 41)
+        Me.btnAccesorios.TabIndex = 10
+        Me.btnAccesorios.Text = "ACCESORIOS"
+        Me.btnAccesorios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAccesorios.UseVisualStyleBackColor = True
         '
         'Panel4
         '
@@ -353,5 +353,5 @@ Partial Class MenuPrincipal
     Friend WithEvents PanelContenedor As Panel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel6 As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnAccesorios As Button
 End Class

@@ -25,6 +25,7 @@ Partial Class Chequeos
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.grid = New System.Windows.Forms.DataGridView()
+        Me.btnCrear = New System.Windows.Forms.Button()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -71,11 +72,27 @@ Partial Class Chequeos
         Me.grid.Size = New System.Drawing.Size(776, 390)
         Me.grid.TabIndex = 13
         '
+        'btnCrear
+        '
+        Me.btnCrear.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCrear.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnCrear.FlatAppearance.BorderSize = 0
+        Me.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCrear.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCrear.ForeColor = System.Drawing.Color.White
+        Me.btnCrear.Location = New System.Drawing.Point(551, 408)
+        Me.btnCrear.Name = "btnCrear"
+        Me.btnCrear.Size = New System.Drawing.Size(75, 30)
+        Me.btnCrear.TabIndex = 28
+        Me.btnCrear.Text = "Detalles"
+        Me.btnCrear.UseVisualStyleBackColor = False
+        '
         'Chequeos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnCrear)
         Me.Controls.Add(Me.grid)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
@@ -90,4 +107,5 @@ Partial Class Chequeos
     Friend WithEvents Button5 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents grid As DataGridView
+    Friend WithEvents btnCrear As Button
 End Class

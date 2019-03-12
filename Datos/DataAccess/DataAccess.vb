@@ -53,12 +53,19 @@
         End Using
     End Sub
 
-    Public Shared Function Chequeo(id As Integer) As chequeo
+    Public Shared Function Chequeo(id As Integer, Optional full As Boolean = False) As chequeo
         Using container As New Chequeo_de_VehiculosEntities1()
-            Dim result = From item In container.chequeos
-                         Where item.id = id
-                         Select item
-            Return result.First
+            If full = False Then
+                Dim result = From item In container.chequeos
+                             Where item.id = id
+                             Select item
+                Return result.First
+            End If
+
+            Dim result2 = From item In container.chequeos.Include("vehiculo").Include("vehiculo_estado")
+                          Where item.id = id
+                          Select item
+            Return result2.First
         End Using
     End Function
 
@@ -74,7 +81,7 @@
 
     Public Shared Function Vehiculo(id As Integer) As vehiculo
         Using container As New Chequeo_de_VehiculosEntities1()
-            Dim result = From item In container.vehiculoes
+            Dim result = From item In container.vehiculoes.Include("chequeos")
                          Where item.id = id
                          Select item
             Return result.First

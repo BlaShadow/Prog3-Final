@@ -99,6 +99,19 @@ Public Class Chequeo
 
         Using container As New Chequeo_de_VehiculosEntities1()
 
+            Dim estados = From item In container.vehiculo_estado
+                          Select New With {
+                              Key .id = item.id,
+                              Key .nombre = item.nombre
+                          }
+
+            Dim comboSource = New BindingSource()
+            comboSource.DataSource = estados.ToList()
+
+            comboEstado.DataSource = comboSource
+            comboEstado.DisplayMember = "nombre"
+            comboEstado.ValueMember = "id"
+
             Dim tipos = container.tipo_accesorio.ToList()
             panel1.RowCount = 1
             panel1.ColumnCount = tipos.Count
@@ -142,6 +155,7 @@ Public Class Chequeo
                 chequeo.id_vehiculo = Me.vehiculo.id
                 chequeo.fecha = DateTime.Now
                 chequeo.activo = True
+                chequeo.id_estado = comboEstado.SelectedValue
 
                 container.chequeos.Add(chequeo)
                 container.SaveChanges()

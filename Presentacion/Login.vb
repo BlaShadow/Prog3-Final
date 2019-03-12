@@ -44,10 +44,24 @@ Public Class Login
             MenuPrincipal.Show()
             Me.Hide()
 
-            My.Forms.MenuPrincipal.btnCkVehiculos.Enabled = True
-            My.Forms.MenuPrincipal.btnChofer.Enabled = True
-            My.Forms.MenuPrincipal.btnVehiculos.Enabled = True
-            My.Forms.MenuPrincipal.btnUsuarios.Enabled = True
+            If usuario.nivel = 1 Then
+                My.Forms.MenuPrincipal.btnCkVehiculos.Enabled = True
+                My.Forms.MenuPrincipal.btnChofer.Enabled = True
+                My.Forms.MenuPrincipal.btnVehiculos.Enabled = True
+                My.Forms.MenuPrincipal.btnUsuarios.Enabled = True
+            Else
+                My.Forms.MenuPrincipal.btnCkVehiculos.Enabled = True
+                My.Forms.MenuPrincipal.btnChofer.Visible = False
+                My.Forms.MenuPrincipal.btnVehiculos.Visible = False
+                My.Forms.MenuPrincipal.btnUsuarios.Visible = False
+                My.Forms.MenuPrincipal.btnAccesorios.Visible = False
+
+                My.Forms.MenuPrincipal.Panel3.Visible = False
+                My.Forms.MenuPrincipal.Panel4.Visible = False
+                My.Forms.MenuPrincipal.Panel5.Visible = False
+                My.Forms.MenuPrincipal.Panel6.Visible = False
+            End If
+
         End Using
     End Sub
 

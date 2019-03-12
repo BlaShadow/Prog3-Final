@@ -22,14 +22,15 @@ Partial Public Class Chequeo_de_VehiculosEntities1
         Throw New UnintentionalCodeFirstException()
     End Sub
 
+    Public Overridable Property sysdiagrams() As DbSet(Of sysdiagram)
     Public Overridable Property accesorios() As DbSet(Of accesorio)
     Public Overridable Property chequeos() As DbSet(Of chequeo)
+    Public Overridable Property chequeo_accesorio() As DbSet(Of chequeo_accesorio)
     Public Overridable Property nivels() As DbSet(Of nivel)
     Public Overridable Property permisoes() As DbSet(Of permiso)
-    Public Overridable Property sysdiagrams() As DbSet(Of sysdiagram)
     Public Overridable Property tipo_accesorio() As DbSet(Of tipo_accesorio)
     Public Overridable Property usuarios() As DbSet(Of usuario)
     Public Overridable Property vehiculoes() As DbSet(Of vehiculo)
-    Public Overridable Property chequeo_accesorio() As DbSet(Of chequeo_accesorio)
+    Public Overridable Property vehiculo_estado() As DbSet(Of vehiculo_estado)
 
 End Class

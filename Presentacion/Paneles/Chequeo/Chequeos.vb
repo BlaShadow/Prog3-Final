@@ -11,6 +11,7 @@ Public Class Chequeos
                                Key .ID = chequeo.id,
                                Key .Fecha = chequeo.fecha,
                                Key .Vehiculo = chequeo.vehiculo.matricula,
+                               Key .Estado = chequeo.vehiculo_estado.nombre,
                                Key .Tipo = chequeo.tipo,
                                Key .Detalles = chequeo.detalles
                            }
@@ -51,5 +52,22 @@ Public Class Chequeos
 
             Me.cargarChequeos()
         End If
+    End Sub
+
+    Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
+        If grid.SelectedRows.Count = 0 Then
+            Return
+        End If
+
+        Dim row = grid.SelectedRows.Item(0)
+        Dim id = Integer.Parse(row.Cells.Item(0).Value)
+        Dim chequeo = DataAccess.Chequeo(id, True)
+
+        Dim form = New DetallesChequeo() With {
+            .StartPosition = FormStartPosition.CenterScreen
+        }
+        form.setChequeo(chequeo)
+
+        form.ShowDialog()
     End Sub
 End Class

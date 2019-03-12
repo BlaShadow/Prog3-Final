@@ -22,14 +22,12 @@
     <Property Name="combustible" Type="int" Nullable="false" />
     <Property Name="detalles" Type="varchar" MaxLength="250" />
     <Property Name="activo" Type="bit" Nullable="false" />
+    <Property Name="id_estado" Type="int" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Chequeo_de_Vehiculos.dbo.chequeo_accesorio' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="chequeo_accesorio">
     <Key>
       <PropertyRef Name="chequeo_id" />
       <PropertyRef Name="accesorio_id" />
-      <PropertyRef Name="valor" />
     </Key>
     <Property Name="chequeo_id" Type="int" Nullable="false" />
     <Property Name="accesorio_id" Type="int" Nullable="false" />
@@ -93,6 +91,14 @@ warning 6002: The table/view 'Chequeo_de_Vehiculos.dbo.chequeo_accesorio' does n
     <Property Name="chasis" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="puertas" Type="int" Nullable="false" />
     <Property Name="activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vehiculo_estado">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="detalles" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'Chequeo_de_Vehiculos.dbo.vehiculo_permiso' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -164,6 +170,18 @@ warning 6002: The table/view 'Chequeo_de_Vehiculos.dbo.vehiculo_permiso' does no
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_chequeo_vehiculo_estado">
+    <End Role="vehiculo_estado" Type="Self.vehiculo_estado" Multiplicity="1" />
+    <End Role="chequeo" Type="Self.chequeo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vehiculo_estado">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="chequeo">
+        <PropertyRef Name="id_estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_usuario_nivel">
     <End Role="nivel" Type="Self.nivel" Multiplicity="1" />
     <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
@@ -203,19 +221,14 @@ warning 6002: The table/view 'Chequeo_de_Vehiculos.dbo.vehiculo_permiso' does no
   <EntityContainer Name="ChequeoVehiculosModelStoreContainer">
     <EntitySet Name="accesorio" EntityType="Self.accesorio" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="chequeo" EntityType="Self.chequeo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="chequeo_accesorio" EntityType="Self.chequeo_accesorio" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="nivel" EntityType="Self.nivel" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="permiso" EntityType="Self.permiso" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tipo_accesorio" EntityType="Self.tipo_accesorio" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="vehiculo" EntityType="Self.vehiculo" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="chequeo_accesorio" EntityType="Self.chequeo_accesorio" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [chequeo_accesorio].[chequeo_id] AS [chequeo_id], 
-    [chequeo_accesorio].[accesorio_id] AS [accesorio_id], 
-    [chequeo_accesorio].[valor] AS [valor]
-    FROM [dbo].[chequeo_accesorio] AS [chequeo_accesorio]</DefiningQuery>
-    </EntitySet>
+    <EntitySet Name="vehiculo_estado" EntityType="Self.vehiculo_estado" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="vehiculo_permiso" EntityType="Self.vehiculo_permiso" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [vehiculo_permiso].[vehiculo_id] AS [vehiculo_id], 
@@ -240,6 +253,10 @@ warning 6002: The table/view 'Chequeo_de_Vehiculos.dbo.vehiculo_permiso' does no
     </AssociationSet>
     <AssociationSet Name="FK_chequeo_Vehiculo" Association="Self.FK_chequeo_Vehiculo">
       <End Role="vehiculo" EntitySet="vehiculo" />
+      <End Role="chequeo" EntitySet="chequeo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_chequeo_vehiculo_estado" Association="Self.FK_chequeo_vehiculo_estado">
+      <End Role="vehiculo_estado" EntitySet="vehiculo_estado" />
       <End Role="chequeo" EntitySet="chequeo" />
     </AssociationSet>
     <AssociationSet Name="FK_usuario_nivel" Association="Self.FK_usuario_nivel">

@@ -4,23 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="97a1a7fde001401cb46f959973211529" Name="Diagram1">
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.accesorio" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.chequeo" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.nivel" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.permiso" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.sysdiagram" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.tipo_accesorio" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.usuario" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.vehiculo" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ChequeoVehiculosModel.chequeo_accesorio" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
-        <AssociationConnector Association="ChequeoVehiculosModel.FK_accesorio_tipo_accesorio" ManuallyRouted="false" />
-        <AssociationConnector Association="ChequeoVehiculosModel.FK_chequeo_accesorio_accesorio" ManuallyRouted="false" />
-        <AssociationConnector Association="ChequeoVehiculosModel.FK_chequeo_accesorio_chequeo" ManuallyRouted="false" />
-        <AssociationConnector Association="ChequeoVehiculosModel.FK_chequeo_Usuarios" ManuallyRouted="false" />
-        <AssociationConnector Association="ChequeoVehiculosModel.FK_chequeo_Vehiculo" ManuallyRouted="false" />
-        <AssociationConnector Association="ChequeoVehiculosModel.FK_usuario_nivel" ManuallyRouted="false" />
-        <AssociationConnector Association="ChequeoVehiculosModel.vehiculo_permiso" ManuallyRouted="false" />
+      <Diagram DiagramId="97a1a7fde001401cb46f959973211529" Name="Diagram1" ZoomLevel="124">
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.accesorio" Width="1.5" PointX="5.25" PointY="11.75" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.chequeo" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.chequeo_accesorio" Width="1.5" PointX="7.5" PointY="1.875" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.nivel" Width="1.5" PointX="0.75" PointY="8.375" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.permiso" Width="1.5" PointX="0.75" PointY="1.75" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.tipo_accesorio" Width="1.5" PointX="3" PointY="12" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.usuario" Width="1.5" PointX="3" PointY="8" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.vehiculo" Width="1.5" PointX="3" PointY="1.25" />
+        <EntityTypeShape EntityType="ChequeoVehiculosModel.vehiculo_estado" Width="1.5" PointX="3" PointY="5.375" />
+        <AssociationConnector Association="ChequeoVehiculosModel.FK_accesorio_tipo_accesorio" />
+        <AssociationConnector Association="ChequeoVehiculosModel.FK_chequeo_accesorio_accesorio" />
+        <AssociationConnector Association="ChequeoVehiculosModel.FK_chequeo_accesorio_chequeo" />
+        <AssociationConnector Association="ChequeoVehiculosModel.FK_chequeo_Usuarios" />
+        <AssociationConnector Association="ChequeoVehiculosModel.FK_chequeo_Vehiculo" />
+        <AssociationConnector Association="ChequeoVehiculosModel.FK_chequeo_vehiculo_estado" />
+        <AssociationConnector Association="ChequeoVehiculosModel.FK_usuario_nivel" />
+        <AssociationConnector Association="ChequeoVehiculosModel.vehiculo_permiso" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

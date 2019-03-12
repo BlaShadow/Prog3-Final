@@ -134,6 +134,9 @@
     <Compile Include="vehiculo.vb">
       <DependentUpon>ContainerModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vehiculo_estado.vb">
+      <DependentUpon>ContainerModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

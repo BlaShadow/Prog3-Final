@@ -46,12 +46,14 @@ Partial Class Chequeo
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.panel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.combo = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtDetails = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.panel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.comboEstado = New System.Windows.Forms.ComboBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -310,6 +312,8 @@ Partial Class Chequeo
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.comboEstado)
+        Me.GroupBox3.Controls.Add(Me.Label13)
         Me.GroupBox3.Controls.Add(Me.panel1)
         Me.GroupBox3.Controls.Add(Me.combo)
         Me.GroupBox3.Controls.Add(Me.Label12)
@@ -328,6 +332,23 @@ Partial Class Chequeo
         Me.GroupBox3.TabIndex = 41
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Realizar chequeo"
+        '
+        'panel1
+        '
+        Me.panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.panel1.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.panel1.ColumnCount = 2
+        Me.panel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.panel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.panel1.Location = New System.Drawing.Point(10, 249)
+        Me.panel1.Name = "panel1"
+        Me.panel1.RowCount = 1
+        Me.panel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.panel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.panel1.Size = New System.Drawing.Size(333, 160)
+        Me.panel1.TabIndex = 46
         '
         'combo
         '
@@ -375,22 +396,23 @@ Partial Class Chequeo
         Me.Label10.TabIndex = 38
         Me.Label10.Text = "Tipo"
         '
-        'panel1
+        'comboEstado
         '
-        Me.panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.panel1.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.panel1.ColumnCount = 2
-        Me.panel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.panel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.panel1.Location = New System.Drawing.Point(10, 249)
-        Me.panel1.Name = "panel1"
-        Me.panel1.RowCount = 1
-        Me.panel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.panel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.panel1.Size = New System.Drawing.Size(333, 160)
-        Me.panel1.TabIndex = 46
+        Me.comboEstado.FormattingEnabled = True
+        Me.comboEstado.Location = New System.Drawing.Point(178, 37)
+        Me.comboEstado.Name = "comboEstado"
+        Me.comboEstado.Size = New System.Drawing.Size(141, 21)
+        Me.comboEstado.TabIndex = 48
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(175, 16)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(47, 18)
+        Me.Label13.TabIndex = 47
+        Me.Label13.Text = "Estado"
         '
         'Chequeo
         '
@@ -446,4 +468,6 @@ Partial Class Chequeo
     Friend WithEvents Button2 As Button
     Friend WithEvents combo As ComboBox
     Friend WithEvents panel1 As TableLayoutPanel
+    Friend WithEvents comboEstado As ComboBox
+    Friend WithEvents Label13 As Label
 End Class

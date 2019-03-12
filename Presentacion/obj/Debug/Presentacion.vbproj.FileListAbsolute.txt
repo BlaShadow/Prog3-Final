@@ -59,3 +59,4 @@ C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\bin\Debug
 C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.Vehiculos.resources
 C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.Permisos.resources
 C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.Chequeos.resources
+C:\Users\BlackShadow\Downloads\appChequeoVehiculos-master\Presentacion\obj\Debug\Presentacion.DetallesChequeo.resources
