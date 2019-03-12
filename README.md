@@ -5,7 +5,7 @@ El sistema consistirá en una aplicación de escritorio que permitirá llevar un
 
 *Instalacion*
 Script de base de datos \
-![Script Base de datos](../blob/master/Datos/DataBaseScript.txt)
+![Script Base de datos](https://raw.githubusercontent.com/BlaShadow/Prog3-Final/master/Datos/DataBaseScript.txt)
 
 
 *Caracteristicas principales*
